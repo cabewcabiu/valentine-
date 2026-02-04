@@ -93,158 +93,20 @@
             z-index: 10;
         }
 
-        /* Cute Character - Bunny hugging heart */
-        .character {
+        /* Puppy Image */
+        .puppy-image {
             width: 200px;
-            height: 200px;
+            height: auto;
             margin: 0 auto 30px;
-            position: relative;
+            display: block;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+            animation: puppy-bounce 2s ease-in-out infinite;
         }
 
-        /* Big Heart */
-        .big-heart {
-            width: 150px;
-            height: 140px;
-            background: #ff5252;
-            position: relative;
-            transform: rotate(-5deg);
-            border-radius: 20px;
-            margin: 0 auto;
+        @keyframes puppy-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-
-        .big-heart::before,
-        .big-heart::after {
-            content: '';
-            width: 150px;
-            height: 140px;
-            background: #ff5252;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        .big-heart::before {
-            top: -70px;
-            left: 0;
-        }
-
-        .big-heart::after {
-            top: 0;
-            left: 70px;
-            border-radius: 50%;
-        }
-
-        /* Bunny */
-        .bunny {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            z-index: 5;
-        }
-
-        .bunny-body {
-            width: 100px;
-            height: 80px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .bunny-head {
-            width: 70px;
-            height: 60px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            top: -30px;
-            right: -20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .bunny-ear {
-            width: 15px;
-            height: 40px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            top: -35px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .bunny-ear.left { left: 15px; transform: rotate(-15deg); }
-        .bunny-ear.right { right: 15px; transform: rotate(15deg); }
-
-        .bunny-ear-inner {
-            width: 8px;
-            height: 25px;
-            background: #ffb3b3;
-            border-radius: 50%;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Closed happy eyes */
-        .bunny-eye-closed {
-            width: 10px;
-            height: 5px;
-            border-bottom: 3px solid #333;
-            border-radius: 0 0 10px 10px;
-            position: absolute;
-            top: 22px;
-        }
-
-        .bunny-eye-closed.left { left: 15px; }
-        .bunny-eye-closed.right { right: 15px; }
-
-        .bunny-cheek {
-            width: 15px;
-            height: 10px;
-            background: #ffb3b3;
-            border-radius: 50%;
-            position: absolute;
-            top: 32px;
-        }
-
-        .bunny-cheek.left { left: 5px; }
-        .bunny-cheek.right { right: 5px; }
-
-        .bunny-nose {
-            width: 8px;
-            height: 6px;
-            background: #ffb3b3;
-            border-radius: 50%;
-            position: absolute;
-            top: 28px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .bunny-mouth {
-            width: 12px;
-            height: 6px;
-            border-bottom: 2px solid #333;
-            border-radius: 0 0 50% 50%;
-            position: absolute;
-            top: 34px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .bunny-arm {
-            width: 25px;
-            height: 15px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            top: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .bunny-arm.left { left: -10px; transform: rotate(30deg); }
-        .bunny-arm.right { right: -10px; transform: rotate(-30deg); }
 
         /* Message */
         .message {
@@ -355,14 +217,16 @@
             margin-bottom: 30px;
         }
 
-        .celebration-emoji {
-            font-size: 5rem;
-            animation: heart-beat 1s ease-in-out infinite;
+        .celebration-puppy {
+            width: 250px;
+            height: auto;
+            animation: happy-bounce 0.5s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
         }
 
-        @keyframes heart-beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        @keyframes happy-bounce {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
         }
 
         /* Confetti */
@@ -385,60 +249,11 @@
                 opacity: 0;
             }
         }
-
-        /* Start Screen */
-        .start-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, #fff5f5 0%, #ffe0e0 100%);
-            z-index: 300;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .start-screen.hidden {
-            display: none;
-        }
-
-        .start-screen h2 {
-            font-size: 2rem;
-            color: #ff5252;
-            margin-bottom: 20px;
-        }
-
-        .start-screen p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .start-screen .tap-icon {
-            font-size: 4rem;
-            animation: tap-bounce 1s ease-in-out infinite;
-        }
-
-        @keyframes tap-bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
     </style>
 </head>
 <body>
-    <!-- Start Screen -->
-    <div class="start-screen" id="startScreen" onclick="startExperience()">
-        <h2>You have a message! 💌</h2>
-        <p>Tap anywhere to open</p>
-        <div class="tap-icon">💕</div>
-    </div>
-
     <!-- Music Toggle Button -->
-    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔊</button>
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔇</button>
 
     <!-- Background Music - MP3 file in same folder -->
     <audio id="bgMusic" loop>
@@ -456,31 +271,13 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Cute Bunny Character -->
-        <div class="character">
-            <div class="big-heart"></div>
-            <div class="bunny">
-                <div class="bunny-body">
-                    <div class="bunny-arm left"></div>
-                    <div class="bunny-arm right"></div>
-                </div>
-                <div class="bunny-head">
-                    <div class="bunny-ear left"><div class="bunny-ear-inner"></div></div>
-                    <div class="bunny-ear right"><div class="bunny-ear-inner"></div></div>
-                    <div class="bunny-eye-closed left"></div>
-                    <div class="bunny-eye-closed right"></div>
-                    <div class="bunny-cheek left"></div>
-                    <div class="bunny-cheek right"></div>
-                    <div class="bunny-nose"></div>
-                    <div class="bunny-mouth"></div>
-                </div>
-            </div>
-        </div>
+        <!-- Cute Puppy with Hat -->
+        <img src="puppy-hat.png" alt="Cute Puppy" class="puppy-image">
 
         <!-- Message -->
         <div class="message">
-            <h1>Hello <span>crush</span>!</h1>
-            <p>Will you be my Valentine?</p>
+            <h1>Hello <span>Nong Beam</span>!</h1>
+            <p>It would be nice to see you on February 14. Want to get together?</p>
         </div>
 
         <!-- Buttons -->
@@ -493,20 +290,23 @@
     <!-- Celebration Screen -->
     <div class="celebration" id="celebration">
         <h1>Yaaay! 🎉</h1>
+        <img src="puppy-smile.png" alt="Happy Puppy" class="celebration-puppy">
         <p>See you on February 14th!</p>
-        <div class="celebration-emoji">😍❤️😍</div>
     </div>
 
     <script>
         const bgMusic = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
         let isPlaying = false;
+        let musicStarted = false;
 
-        // Start experience when user taps
-        function startExperience() {
-            document.getElementById('startScreen').classList.add('hidden');
-            playMusic();
-        }
+        // Try to play music on first click anywhere on page
+        document.body.addEventListener('click', function() {
+            if (!musicStarted) {
+                playMusic();
+                musicStarted = true;
+            }
+        }, { once: false });
 
         // Play music
         function playMusic() {
